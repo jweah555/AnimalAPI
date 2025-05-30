@@ -1,0 +1,78 @@
+package com.example.demo.Bird;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "birds")
+public class Bird {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long birdId;
+    private String name;
+    private String description;
+    private String breed;
+    private int lifeSpan;
+    
+    public Bird() {
+    }  
+
+    public Bird(Long birdId, String name, String description, String breed, int lifeSpan){
+        this.birdId = birdId;
+        this.name = name;
+        this.description = description;
+        this.breed = breed;
+        this.lifeSpan = lifeSpan;
+    }
+
+    public Bird(String name, String description, String breed, int lifeSpan){
+        this.name = name;
+        this.description = description;
+        this.breed = breed;
+        this.lifeSpan = lifeSpan;
+    }
+    
+    public Long getBirdId() {
+        return birdId;
+    }
+
+    public void setBirdId(Long birdId) {
+        this.birdId = birdId;
+    }
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public int getLifeSpan() {
+        return lifeSpan;
+    }
+
+    public void setLifeSpan(int lifeSpan) {
+        this.lifeSpan = lifeSpan;
+    }
+
+}
