@@ -12,4 +12,9 @@ public interface BirdRepository extends JpaRepository<Bird, Long> {
     @Query(value = "select * from birds s where s.lifeSpan >= 5", nativeQuery = true)
     List<Bird> getBirdsLifeSpan(int lifeSpan);
 
+    List<Bird> getBirdsByName(String name);
+    List<Bird> getBirdsByBreed(String breed);
+    List<Bird> getBirdsByDescription(String description);
+
+
 }
