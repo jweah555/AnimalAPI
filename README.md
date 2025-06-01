@@ -1,12 +1,12 @@
 # AnimalAPI
 ## Description
-This is a simple CRUD API for Bird Object with JPA (Hibernate)
+This is a simple CRUD API for Bird Objects with JPA (Hibernate)
 
 ## API Endpoints
-Base URL: ['/](http://localhost:8080/birds) (GET)
+Base URL: [`/`](http://localhost:8080/birds) (GET)
 Gets a list of all Birds in the database.
 
-#### Response - A JSON array of Student objects.
+#### Response - A JSON array of Bird objects.
 
  ```
 [
@@ -50,7 +50,7 @@ Gets an individual Bird in the system. Each Bird is identified by a numeric `bir
 
 ```
 
-  {
+{
   "birdId": 1,
   "name": "Sunny",
   "description": "A small bright yellow bird known for its cheerful song.",
@@ -79,7 +79,8 @@ Gets a list of Birds with a name that contains the given string.
 ]
 ```
 
-4. ### [`/description/{description}`](http://localhost:8080/students/description/A small bright yellow bird known for its cheerful song) (GET)
+4. ### `/description/{description}` (GET)
+<!-- Input url in get request: (http://localhost:8080/students/description/A small bright yellow bird known for its cheerful song) -->
 Gets a list of birds with the description.
 
 #### Parameters
