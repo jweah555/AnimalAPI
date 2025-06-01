@@ -72,6 +72,16 @@ public class BirdService {
         return birdRepository.getBirdsByBreed(breed);
     }
 
+    /**
+     * Get all birds with age above x value.
+     * 
+     * @param age
+     * @return
+     */
+    public Object getBirdsAtCertainAge(int minAge, int maxAge){
+        return birdRepository.getBirdsAtCertainAge(minAge, maxAge);
+    }
+
     //Add bird
 
     /**
@@ -92,7 +102,26 @@ public class BirdService {
         return birdRepository.save(bird);
     }
 
-    //Method to write a student ID to a JSON file
+    //Get Bird by age
+    /**
+     * @param age
+     * @return
+     */
+    public Object getBirdsByAge(int age) {
+        return birdRepository.getBirdsByAge(age);
+    }
+
+    //Delete bird
+    /**
+     * 
+     * @param birdId
+     */
+    public void deleteBird(Long birdId) {
+        birdRepository.deleteById(birdId);
+    }
+
+
+    //Method to write a bird ID to a JSON file
     /**
      * 
      * @param bird
@@ -109,7 +138,21 @@ public class BirdService {
         }
 
     }
-    
+
+    /**
+     * 
+     * @return
+     */
+    public Object readJson() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            return objectMapper.readValue(new File("studens.json"), Bird.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
 
 }
+

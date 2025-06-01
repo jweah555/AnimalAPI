@@ -15,24 +15,24 @@ public class Bird {
     private String name;
     private String description;
     private String breed;
-    private int lifeSpan;
+    private int age;
     
     public Bird() {
     }  
 
-    public Bird(Long birdId, String name, String description, String breed, int lifeSpan){
+    public Bird(Long birdId, String name, String description, String breed, int age){
         this.birdId = birdId;
         this.name = name;
         this.description = description;
         this.breed = breed;
-        this.lifeSpan = lifeSpan;
+        this.age = age;
     }
 
-    public Bird(String name, String description, String breed, int lifeSpan){
+    public Bird(String name, String description, String breed, int age){
         this.name = name;
         this.description = description;
         this.breed = breed;
-        this.lifeSpan = lifeSpan;
+        this.age = age;
     }
     
     public Long getBirdId() {
@@ -67,12 +67,12 @@ public class Bird {
         this.breed = breed;
     }
 
-    public int getLifeSpan() {
-        return lifeSpan;
+    public int getAge() {
+        return age;
     }
 
-    public void setLifeSpan(int lifeSpan) {
-        this.lifeSpan = lifeSpan;
+    public void setAge(int age) {
+        this.age = age;
     }
 
 }
