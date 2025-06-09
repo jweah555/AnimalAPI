@@ -91,7 +91,7 @@ public class BirdService {
         return birdRepository.save(bird);
     }
 
-    //Update Student
+    //Update Bird
     /**
      * 
      * @param birdId
