@@ -100,6 +100,10 @@ footer {
     margin-top: 3rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
+    position: fixed;
+    width: 100%;
+   
+    bottom: 0;
 }
 
 .icon-list {

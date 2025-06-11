@@ -24,9 +24,7 @@
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/birds/createForm">Create</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
+             
               
             </ul>
             

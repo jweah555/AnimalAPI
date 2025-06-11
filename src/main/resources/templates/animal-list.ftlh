@@ -30,9 +30,7 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/birds/createForm">Create</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/birds/update">Update Page</a>
-          </li>
+         
 
         </ul>
 
@@ -40,12 +38,13 @@
     </div>
   </nav>
   <section class="welcome">
-    <h1>Learn About Animals and Their Unique Qualities</h1>
-    <h2>${title}</h2>
+    <h1>Learn About Birds and Their Unique Qualities</h1>
+    
     <form action="/birds/name" class="d-flex mt-3 mt-lg-0" role="search">
       <input name="name" class="form-control me-2" type="text" placeholder="Search by Name" aria-label="Search"> <button
         class="btn btn-outline-success" type="submit">Search</button>
     </form>
+    <h2>${title}</h2>
   </section>
   <section class="animal-list position-relative">
     <#list birdsList as bird>
