@@ -44,7 +44,7 @@
               <p class="card-text">Bird Breed: ${bird.breed} </p>
                <p class="card-text">Bird Age: ${bird.age}</p>
                 <p class="card-text">Bird Description: ${bird.description}</p>
-                <a href="/birds/update"> <button type="submit" class="btn btn-primary">Update Bird</button></a>
+                <a href="/birds/updateForm/${bird.birdId?c}"> Update Bird</a>
                
             </div>
         

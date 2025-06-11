@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 
@@ -46,7 +45,7 @@ public class BirdController {
 
 
     
-     
+
 
     //  //Endpoint to get bird by name
     //  /**
@@ -137,17 +136,35 @@ public class BirdController {
         return "redirect:/birds/" + newBird.getBirdId();
       }
 
-    //  //Update Bird by id
-    //  /**
-    //   * @param id
-    //   * @param bird
-    //   * @return
-    //   */
-    //   @PutMapping("/birds/{id}")
-    //   public Bird updateBird(@PathVariable Long id, @RequestBody Bird bird ) {
-    //     birdService.updateBird(id, bird);
-    //     return birdService.getBirdById(id);
-    //   }
+     //Update Bird by id
+     /**
+      * @param id
+      * @param model
+      * @return
+      */
+      @GetMapping("/birds/updateForm/{id}")
+      public Object showUpdateForm(@PathVariable Long id, Model model ) {
+        Bird bird = birdService.getBirdById(id);
+        model.addAttribute("bird", bird);
+        model.addAttribute("title", "Update Student: " + id);
+        return "animal-update";
+      }
+
+
+      /**
+       * Endpoint to update a student
+       * 
+       * @param id
+       * @param bird
+       * @return
+       */
+
+       @PostMapping("/birds/update/{id}")
+       public Object updateBird(@PathVariable Long id, Bird bird) {
+        bird.setBirdId(id);
+        birdService.updateBird(id, bird);
+        return "redirect:/birds/" + id;
+       }
 
     //   //Delete Bird by Id
     //   @DeleteMapping("/birds/{id}")
