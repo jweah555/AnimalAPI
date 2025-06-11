@@ -59,6 +59,12 @@ nav {
     
 }
 
+.details-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .detail-header {
     margin-top: 2rem;
     text-align: center;

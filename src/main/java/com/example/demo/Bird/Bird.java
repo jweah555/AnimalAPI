@@ -16,26 +16,26 @@ public class Bird {
     private String description;
     private String breed;
     private int age;
-    private String image;
+    // private String image;
     
     public Bird() {
     }  
 
-    public Bird(Long birdId, String name, String description, String breed, int age, String image){
+    public Bird(Long birdId, String name, String description, String breed, int age){
         this.birdId = birdId;
         this.name = name;
         this.description = description;
         this.breed = breed;
         this.age = age;
-        this.image = image;
+        // this.image = image;
     }
 
-    public Bird(String name, String description, String breed, int age, String image){
+    public Bird(String name, String description, String breed, int age){
         this.name = name;
         this.description = description;
         this.breed = breed;
         this.age = age;
-        this.image = image;
+       
     }
     
     public Long getBirdId() {
@@ -78,12 +78,12 @@ public class Bird {
         this.age = age;
     }
 
-    public String getImgUrl() {
-        return image;
-    }
+    // public String getImgUrl() {
+    //     return image;
+    // }
 
-    public void setImgUrl(String image){
-        this.image = image;
-    }
+    // public void setImgUrl(String image){
+    //     this.image = image;
+    // }
 
 }

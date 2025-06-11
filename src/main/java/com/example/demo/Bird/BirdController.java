@@ -3,7 +3,8 @@ package com.example.demo.Bird;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -28,22 +29,24 @@ public class BirdController {
         return "animal-list";
     }
 
-    @GetMapping("/birds/{id}")
-    public String getMethodName(@RequestParam String param) {
-        return new String();
-    }
+   
     
+    //Endpoint to get bird by ID
+    /**
+     * @param id
+     * @return
+     */
+     @GetMapping("/birds/{id}")
+     public Object getBirdById(@PathVariable long id, Model model) {
+       model.addAttribute("bird", birdService.getBirdById(id));
+       model.addAttribute("title", "Bird #:" + id);
+        return "animal-details";
+     }
 
 
-    // //Endpoint to get bird by ID
-    // /**
-    //  * @param id
-    //  * @return
-    //  */
-    //  @GetMapping("/birds/{id}")
-    //  public Bird getBirdById(@PathVariable long id) {
-    //     return birdService.getBirdById(id);
-    //  }
+
+    
+     
 
     //  //Endpoint to get bird by name
     //  /**
@@ -105,19 +108,34 @@ public class BirdController {
     //   }
       
 
+    /**
+     * Enpoint to show the create form for a new bird
+     * @param bird
+     * @return
+     */
+
+    @GetMapping("/birds/createForm")
+    public Object showCreateForm(Model model) {
+        Bird bird = new Bird();
+        model.addAttribute("bird", bird);
+        model.addAttribute("title", "Create New Bird");
+        return "animal-create";
+    }
+    
 
 
     //   //Enpoint to get birds based on Age
 
-    //   //Endpoint to add Birds
-    //   /**
-    //    * @param bird
-    //    * @return
-    //    */
-    //   @PostMapping("/birds")
-    //   public Object addBirds(@RequestBody Bird bird) {
-    //     return birdService.addBird(bird);
-    //   }
+      //Endpoint to add Birds
+      /**
+       * @param bird
+       * @return
+       */
+      @PostMapping("/birds")
+      public Object addBirds(Bird bird) {
+        Bird newBird = birdService.addBird(bird);
+        return "redirect:/birds/" + newBird.getBirdId();
+      }
 
     //  //Update Bird by id
     //  /**
