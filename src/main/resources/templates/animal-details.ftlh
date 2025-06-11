@@ -36,7 +36,7 @@
         
          <div class="card detail-box mb-3">
          
-            <img src="" class="card-img-top" alt="...">
+            
             <div class="card-body">
               <h5 class="card-title">Bird Name: ${bird.name}</h5>
               <p class="card-text">Bird Breed: ${bird.breed} </p>
