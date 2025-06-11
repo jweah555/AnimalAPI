@@ -42,6 +42,10 @@
   <section class="welcome">
     <h1>Learn About Animals and Their Unique Qualities</h1>
     <h2>${title}</h2>
+    <form action="/birds/name" class="d-flex mt-3 mt-lg-0" role="search">
+      <input name="name" class="form-control me-2" type="text" placeholder="Search by Name" aria-label="Search"> <button
+        class="btn btn-outline-success" type="submit">Search</button>
+    </form>
   </section>
   <section class="animal-list position-relative">
     <#list birdsList as bird>
@@ -51,7 +55,7 @@
         <div class="card-body">
           <div class="card-body">
             <h5 class="card-title">Bird Name: ${bird.name?default("No Name")}</h5>
-           
+
 
             <p class="card-text">Bird Breed: ${bird.breed?default("No breed")}</p>
             <p class="card-text">Bird Age: ${bird.age?default("No age")}</p>
@@ -60,7 +64,7 @@
 
 
 
-          <a  href="/birds/${bird.birdId?c}" class="btn btn-primary">View Animal #: ${bird.birdId?default("No Id")}</a>
+          <a href="/birds/${bird.birdId?c}" class="btn btn-primary">View Animal #: ${bird.birdId?default("No Id")}</a>
         </div>
       </div>
     </#list>

@@ -49,22 +49,23 @@ public class BirdController {
     
 
 
-    //  //Endpoint to get bird by name
-    //  /**
-    //   * 
-    //   * @param name
-    //   * @return
-    //   */
+     //Endpoint to get bird by name
+     /**
+      * 
+      * @param name
+      * @return
+      */
 
-    //  @GetMapping("/birds/name")
-    //  public Object getBirdsByName(@RequestParam String key) {
-    //     if (key != null) {
-    //         return birdService.getBirdsByName(key);
-    //     } else {
-    //         return birdService.getAllBirds();
-    //     }
-
-    //  }
+     @GetMapping("/birds/name")
+     public Object getBirdsByName(@RequestParam String name, Model model) {
+        if (name != null) {
+            model.addAttribute("birdsList", birdService.getBirdsByName(name));
+            model.addAttribute("title", "Birds by Name: " + name);
+            return "animal-list";
+        } else {
+            return "redirect:/birds/";
+        }
+     }
 
     //  //Endpoint to get bird by description
     //  /**
