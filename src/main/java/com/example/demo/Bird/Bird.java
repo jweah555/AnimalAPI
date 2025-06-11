@@ -16,6 +16,7 @@ public class Bird {
     private String description;
     private String breed;
     private int age;
+    // private String image;
     
     public Bird() {
     }  
@@ -26,6 +27,7 @@ public class Bird {
         this.description = description;
         this.breed = breed;
         this.age = age;
+        // this.image = image;
     }
 
     public Bird(String name, String description, String breed, int age){
@@ -33,6 +35,7 @@ public class Bird {
         this.description = description;
         this.breed = breed;
         this.age = age;
+       
     }
     
     public Long getBirdId() {
@@ -74,5 +77,13 @@ public class Bird {
     public void setAge(int age) {
         this.age = age;
     }
+
+    // public String getImgUrl() {
+    //     return image;
+    // }
+
+    // public void setImgUrl(String image){
+    //     this.image = image;
+    // }
 
 }
