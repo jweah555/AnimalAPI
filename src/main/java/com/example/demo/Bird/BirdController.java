@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 
@@ -47,22 +49,23 @@ public class BirdController {
     
 
 
-    //  //Endpoint to get bird by name
-    //  /**
-    //   * 
-    //   * @param name
-    //   * @return
-    //   */
+     //Endpoint to get bird by name
+     /**
+      * 
+      * @param name
+      * @return
+      */
 
-    //  @GetMapping("/birds/name")
-    //  public Object getBirdsByName(@RequestParam String key) {
-    //     if (key != null) {
-    //         return birdService.getBirdsByName(key);
-    //     } else {
-    //         return birdService.getAllBirds();
-    //     }
-
-    //  }
+     @GetMapping("/birds/name")
+     public Object getBirdsByName(@RequestParam String name, Model model) {
+        if (name != null) {
+            model.addAttribute("birdsList", birdService.getBirdsByName(name));
+            model.addAttribute("title", "Birds by Name: " + name);
+            return "animal-list";
+        } else {
+            return "redirect:/birds/";
+        }
+     }
 
     //  //Endpoint to get bird by description
     //  /**
@@ -166,12 +169,25 @@ public class BirdController {
         return "redirect:/birds/" + id;
        }
 
-    //   //Delete Bird by Id
-    //   @DeleteMapping("/birds/{id}")
-    //   public Object deleteBird(@PathVariable Long id){
-    //     birdService.deleteBird(id);
-    //     return birdService.getAllBirds();
-    //   }
+       /**
+        * Endpoint to delete a student
+        * @param id
+        * @return
+        */
+       //
+       @GetMapping("/birds/delete/{id}")
+       public Object deleteBird(@PathVariable Long id) {
+           birdService.deleteBird(id);
+           return "redirect:/birds/";
+       }
+       
+
+      //Delete Bird by Id
+      // @DeleteMapping("/birds/{id}")
+      // public Object deleteBird(@PathVariable Long id){
+      //   birdService.deleteBird(id);
+      //   return birdService.getAllBirds();
+      // }
 
       
 

@@ -44,9 +44,10 @@
               <p class="card-text">Bird Breed: ${bird.breed} </p>
                <p class="card-text">Bird Age: ${bird.age}</p>
                 <p class="card-text">Bird Description: ${bird.description}</p>
-                <a href="/birds/updateForm/${bird.birdId?c}"> Update Bird</a>
-               
-            </div>
+                <a href="/birds/updateForm/${bird.birdId?c}" class="btn btn-primary"> Update Bird</a>
+                <a href="/birds/delete/${bird.birdId?c}" class="btn btn-danger"> Delete Bird</a>
+             <a href="/birds" class="btn btn-outline-danger">Go back</a>
+              </div>
         
           </div>
          
