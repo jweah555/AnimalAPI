@@ -11,29 +11,42 @@
     <nav class="navbar navbar-expand-lg bg-primary">
         
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Animals.io</a>
+          <a class="navbar-brand" href="/birds">Animals.io</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                  </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="detail.html">Detail</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              
+                    <a class="nav-link active" aria-current="page" href="/birds">Home</a>
+                  </li>   
             </ul>
             
           </div>
         </div>
       </nav>
       <section class="welcome">
-        <h1>Learn About Animals and Their Unique Qualities</h1>
+        <h1>Update Bird</h1>
+        <form  id="new-bird" action="/birds/update/${bird.birdId?c}" method="post">    
+        <label class="form-label">Bird Name</label>
+        <input type="text" name="name" value="${bird.name}" class="form-control">
+
+        <label class="form-label">Bird Description</label>
+        <input type="text" name="description" value="${bird.description}" class="form-control">
+
+        <label class="form-label">Bird Breed</label>
+        <input type="text" name="breed" value="${bird.breed}" class="form-control">
+
+        <label class="form-label">Bird Age</label>
+        <input type="number" name="age" value="${bird.age}" class="form-control">
+      
+        <!-- <label class="form-label">Bird Image URL</label>
+        <input type="text" id="image" class="form-control"> -->
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+       <a href="/birds/${bird.birdId?c}" class="btn btn-outline-danger">Cancel</a>
+    </form>
+      
       </section>
   
       <footer>
